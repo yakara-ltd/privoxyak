@@ -1,0 +1,9 @@
+<%- for limit_connect in @limit_connects -%>
+<%- for ports, patterns in limit_connect -%>
+{ +limit-connect{<%= case ports when true; ',' when false; '-' else Array(ports).join(', ') end %>} }
+<%- for pattern in Array(patterns) -%>
+<%= pattern %>
+<%- end -%>
+
+<%- end -%>
+<%- end -%>

@@ -1,0 +1,34 @@
+---
+driver:
+  name: vagrant
+  network:
+    - ['forwarded_port', {guest: 8118, host: 8118, auto_correct: true}]
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-7.3
+  - name: debian-8.7
+
+suites:
+  - name: default
+    run_list:
+      - recipe[privoxyak::whitelists]
+      - recipe[privoxyak::default]
+    attributes:
+      privoxyak:
+        config:
+          listen_address: :8118
+        limit_connect:
+          - '443': /
+          - '5222': jabber.org
+        whitelist:
+          ElReg:
+            - .theregister.com
+            - .theregister.co.uk
+          Google:
+            - .google.com
+            - .google.co.uk
+          Jabber:
+            - .jabber.org

@@ -1,0 +1,14 @@
+<%- for key, values in @config.sort { |(ka,_),(kb,_)| (!ka.end_with?('dir') || kb.end_with?('dir')) ? (ka <=> kb) : -1 } -%>
+<%- key = key.gsub('_', '-') -%>
+<%- for value in Array(values) -%>
+<%- case value -%>
+<%- when nil -%>
+<%- when true -%>
+<%= key %> 1
+<%- when false -%>
+<%= key %> 0
+<%- else -%>
+<%= key %> <%= value %>
+<%- end -%>
+<%- end -%>
+<%- end -%>

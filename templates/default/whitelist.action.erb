@@ -1,0 +1,12 @@
+{ +block }
+# Block all by default
+/
+
+{ -block }
+<%- for comment, patterns in @whitelist -%>
+# <%= comment %>
+<%- for pattern in patterns -%>
+<%= pattern %>
+<%- end -%>
+
+<%- end -%>
