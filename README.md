@@ -21,19 +21,19 @@ A `limit-connect.action` file is created from `node['privoxy']['limit_connect']`
 
 If `node['privoxy']['whitelist']` is non-empty (it is empty by default) then a `whitelist.action` file is created and added to the configuration. This starts by blocking all URLs and specific URLs can subsequently be unblocked. Set this attribute as a hash with values representing the rule patterns and keys to group them by comment. The whitelist recipes are used to populate the attribute from live mirror lists.
 
-### privoxyak::whitelist_centos
+#### privoxyak::whitelist_centos
 Populates the whitelist with CentOS mirror URLs.
 
-### privoxyak::whitelist_cpan
+#### privoxyak::whitelist_cpan
 Populates the whitelist with CPAN mirror URLs.
 
-### privoxyak::whitelist_elrepo
+#### privoxyak::whitelist_elrepo
 Populates the whitelist with ELRepo mirror URLs. The `node['privoxyak']['elrepo_versions']` attribute array determines which EL versions to fetch mirrors for. These URLs are suitable for all the ELRepo repositories, not just the main "elrepo" repository.
 
-### privoxyak::whitelist_epel
+#### privoxyak::whitelist_epel
 Populates the whitelist with EPEL mirror URLs. The `node['privoxyak']['epel_versions']` attribute array determines which EL versions to fetch mirrors for.
 
-### privoxyak::whitelist
+#### privoxyak::whitelist
 Includes all of the whitelist recipes above.
 
 Contributing
