@@ -37,3 +37,6 @@ ruby_block 'whitelist_cpan' do
       Chef::Privoxyak::Helpers.normalize_patterns(patterns)
   end
 end
+
+node.default['privoxyak']['whitelist']['Mirror Lists'] <<
+  Chef::Privoxyak::Helpers.action_pattern(rf.source.first)

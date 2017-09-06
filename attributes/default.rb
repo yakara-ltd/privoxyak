@@ -24,7 +24,9 @@ default['privoxyak']['elrepo_versions'] = [7]
 default['privoxyak']['epel_versions'] = [7]
 default['privoxyak']['limit_connect'] = [{ 443 => '/' }]
 default['privoxyak']['syslog'] = false
+
 default['privoxyak']['whitelist'] = {}
+default['privoxyak']['whitelist']['Mirror Lists'] = []
 
 config = default['privoxyak']['config']
 

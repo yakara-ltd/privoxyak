@@ -43,3 +43,6 @@ node['privoxyak']['epel_versions'].each do |version|
     end
   end
 end
+
+node.default['privoxyak']['whitelist']['Mirror Lists'] <<
+  'mirrors.fedoraproject.org'

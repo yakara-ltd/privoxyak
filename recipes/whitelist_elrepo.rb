@@ -43,4 +43,7 @@ node['privoxyak']['elrepo_versions'].each do |version|
         Chef::Privoxyak::Helpers.normalize_patterns(patterns)
     end
   end
+
+  node.default['privoxyak']['whitelist']['Mirror Lists'] <<
+    Chef::Privoxyak::Helpers.action_pattern(rf.source.first)
 end
