@@ -12,6 +12,7 @@ chef_version     '>= 12'
 source_url 'https://github.com/yakara-ltd/privoxyak'
 issues_url 'https://github.com/yakara-ltd/privoxyak/issues'
 
+depends 'selinux_policy'
 depends 'systemd'
 depends 'yum-epel'
 
