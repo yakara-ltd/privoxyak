@@ -44,5 +44,7 @@ node['privoxyak']['epel_versions'].each do |version|
   end
 end
 
-node.default['privoxyak']['whitelist']['Mirror Lists'] <<
+node.default['privoxyak']['whitelist']['Mirror Lists'].push(
+  'download.fedoraproject.org',
   'mirrors.fedoraproject.org'
+)

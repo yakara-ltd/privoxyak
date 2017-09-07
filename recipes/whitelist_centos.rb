@@ -43,5 +43,7 @@ ruby_block 'whitelist_centos' do
   end
 end
 
-node.default['privoxyak']['whitelist']['Mirror Lists'] <<
-  Chef::Privoxyak::Helpers.action_pattern(rf.source.first)
+node.default['privoxyak']['whitelist']['Mirror Lists'].push(
+  Chef::Privoxyak::Helpers.action_pattern(rf.source.first),
+  'mirror.centos.org'
+)

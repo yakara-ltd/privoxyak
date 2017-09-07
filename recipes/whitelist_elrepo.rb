@@ -47,3 +47,6 @@ node['privoxyak']['elrepo_versions'].each do |version|
   node.default['privoxyak']['whitelist']['Mirror Lists'] <<
     Chef::Privoxyak::Helpers.action_pattern(rf.source.first)
 end
+
+node.default['privoxyak']['whitelist']['Mirror Lists'] <<
+  'www.elrepo.org'
