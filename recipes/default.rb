@@ -88,8 +88,7 @@ template '/etc/privoxy/config' do
   )
 end
 
-extend SELinuxPolicy::Helpers
-include_recipe 'selinux_policy::install' if use_selinux
+include_recipe 'selinux_policy::install'
 
 addresses = Array(node['privoxyak']['config']['listen_address'])
 ports = addresses.map { |a| a.slice(/(?<=:)\d+$/) }.compact.uniq

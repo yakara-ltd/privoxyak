@@ -4,14 +4,10 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  compat_resource (12.19.0)
   privoxyak (0.1.0)
     selinux_policy (>= 0.0.0)
     systemd (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  selinux_policy (2.0.1)
-    compat_resource (>= 12.16.3)
-  systemd (3.1.1)
-    compat_resource (>= 0.0.0)
-  yum-epel (2.1.2)
-    compat_resource (>= 12.16.3)
+  selinux_policy (2.4.1)
+  systemd (3.2.4)
+  yum-epel (3.3.0)
