@@ -22,10 +22,10 @@
 
 require 'csv'
 
-basename = 'full-mirrorlist.csv'
+basename = 'os'
 
 rf = remote_file "#{Chef::Config[:file_cache_path]}/centos-#{basename}" do
-  source "https://www.centos.org/download/#{basename}"
+  source "http://mirrorlist.centos.org/?arch=x86_64&repo=#{basename}&release=7"
   sensitive true
 end
 
