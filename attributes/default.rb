@@ -2,10 +2,10 @@
 
 #
 # Author:: James Le Cuirot <james.le-cuirot@yakara.com>
-# Cookbook Name:: privoxyak
+# Cookbook:: privoxyak
 # Attributes:: default
 #
-# Copyright (C) 2017 Yakara Ltd
+# Copyright:: (C) 2017 Yakara Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ config = default['privoxyak']['config']
 config['confdir'] = '/etc/privoxy'
 config['logdir'] = '/var/log/privoxy'
 
-config['actionsfile'] = %w[match-all.action default.action limit-connect.action user.action]
-config['filterfile'] = %w[default.filter user.filter]
+config['actionsfile'] = %w(match-all.action default.action limit-connect.action user.action)
+config['filterfile'] = %w(default.filter user.filter)
 config['logfile'] = 'logfile'
 config['listen_address'] = '127.0.0.1:8118'
 config['toggle'] = true

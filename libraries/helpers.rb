@@ -2,10 +2,10 @@
 
 #
 # Author:: James Le Cuirot <james.le-cuirot@yakara.com>
-# Cookbook Name:: privoxyak
+# Cookbook:: privoxyak
 # Library:: helpers
 #
-# Copyright (C) 2017 Yakara Ltd
+# Copyright:: (C) 2017 Yakara Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,10 +29,10 @@ class Chef
           begin
             URI.parse text
           rescue URI::InvalidURIError
-            return nil
+            return
           end
 
-        return nil unless uri.is_a?(URI::HTTP) && uri.host
+        return unless uri.is_a?(URI::HTTP) && uri.host
 
         host = uri.host.tr('[]', '<>')
         port = uri.port != uri.default_port ? ":#{uri.port}" : nil

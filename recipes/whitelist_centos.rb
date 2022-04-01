@@ -2,10 +2,10 @@
 
 #
 # Author:: James Le Cuirot <james.le-cuirot@yakara.com>
-# Cookbook Name:: privoxyak
+# Cookbook:: privoxyak
 # Recipe:: whitelist_centos
 #
-# Copyright (C) 2017 Yakara Ltd
+# Copyright:: (C) 2017 Yakara Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@
 
 require 'csv'
 
-basename = 'full-mirrorlist.csv'
+basename = 'os'
 
 rf = remote_file "#{Chef::Config[:file_cache_path]}/centos-#{basename}" do
-  source "https://www.centos.org/download/#{basename}"
+  source "http://mirrorlist.centos.org/?arch=x86_64&repo=#{basename}&release=7"
   sensitive true
 end
 
