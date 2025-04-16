@@ -5,9 +5,9 @@ DEPENDENCIES
 
 GRAPH
   privoxyak (0.1.0)
-    selinux_policy (>= 0.0.0)
+    selinux (>= 0.0.0)
     systemd (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  selinux_policy (2.4.1)
-  systemd (3.2.4)
-  yum-epel (3.3.0)
+  selinux (6.2.2)
+  systemd (3.2.5)
+  yum-epel (5.0.8)

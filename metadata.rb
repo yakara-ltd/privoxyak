@@ -11,7 +11,7 @@ chef_version     '>= 13.0'
 source_url 'https://github.com/yakara-ltd/privoxyak'
 issues_url 'https://github.com/yakara-ltd/privoxyak/issues'
 
-depends 'selinux_policy'
+depends 'selinux'
 depends 'systemd'
 depends 'yum-epel'
 
