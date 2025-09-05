@@ -88,13 +88,13 @@ template '/etc/privoxy/config' do
   )
 end
 
-include_recipe 'selinux_policy::install'
+# include_recipe 'selinux_policy::install'
 
 addresses = Array(node['privoxyak']['config']['listen_address'])
 ports = addresses.map { |a| a.slice(/(?<=:)\d+$/) }.compact.uniq
 
 ports.each do |port|
-  selinux_policy_port port do
+  selinux_port port do
     protocol 'tcp'
     secontext 'http_cache_port_t'
   end
